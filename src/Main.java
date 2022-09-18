@@ -23,14 +23,15 @@ public class Main {
         for (int element: arr) {
             sum += element;
         }
-        System.out.println("Средняя сумма трат за месяц составила " + (sum/day) + " рублей");
+        double averageSum = (double) sum/day;
+        System.out.printf("Средняя сумма трат за месяц составила %.2f рублей.\n", averageSum);
     }
 
     private static void task2() {
         System.out.println("Task 2/ найти минимальную и максимальную трату за день");
         int[] arr = generateRandomArray();
-        int maxSum = -1;
-        int minimalSum = 250_000;
+        int maxSum = Integer.MIN_VALUE;
+        int minimalSum = Integer.MAX_VALUE;
         for (int j : arr) {
             if (j > maxSum) {
                 maxSum = j;
